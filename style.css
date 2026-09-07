@@ -1,11 +1,10 @@
 :root {
-  --primary-color: #007bff;
-  --primary-hover: #0056b3;
+  --primary-color: #0400ff;
+  /* --primary-hover: #0056b3; */
   --background-color: #f2f2f2;
   --card-color: #ffffff;
   --input-background: #f7f7f7;
   --border-color: #cccccc;
-  --text-color: #333333;
   --secondary-text: #555555;
   --border-radius: 10px;
 }
@@ -20,12 +19,25 @@ body {
   margin: 0;
 }
 
-.main-container {
+/* .main-container {
   width: 400px;
   background-color: var(--card-color);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+} */
+
+.main-container {
+  width: 400px;
+  background-color: var(--card-color);
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 5px solid transparent; 
+  border-radius: 15px;
+  background-image: linear-gradient(var(--card-color), var(--card-color)), 
+                    linear-gradient(30deg, #0400ff, #4ce3f7);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 
 .form {
@@ -37,7 +49,10 @@ body {
 .form h1 {
   text-align: center;
   margin-bottom: 5px;
-  color: var(--text-color);
+  background: linear-gradient(30deg, #0400ff, #4ce3f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .form h2 {
@@ -66,7 +81,7 @@ input:focus {
   border-color: var(--primary-color);
 }
 
-button {
+/* button {
   padding: 12px;
   border: none;
   border-radius: var(--border-radius);
@@ -74,12 +89,12 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
-}
+} */
 
-button:hover {
+/* button:hover {
   background-color: var(--primary-hover);
   transition: 0.3s ease;
-}
+} */
 
 #todoList {
   padding-left: 0;
@@ -95,6 +110,7 @@ button:hover {
   margin-bottom: 8px;
   border-radius: var(--border-radius);
   border-left: 4px solid var(--primary-color);
+
 }
 
 /* #todoList li span::before {
@@ -105,6 +121,12 @@ button:hover {
 
 #error {
   margin: 1px;
+}
+#todoListH2 {
+  background: linear-gradient(30deg, #0400ff, #4ce3f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 600px) {
