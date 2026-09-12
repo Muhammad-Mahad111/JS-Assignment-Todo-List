@@ -1,4 +1,4 @@
-const todoArray = [];
+const todoArray = JSON.parse(localStorage.getItem("todoArray")) || [];
 const todoTask = document.querySelector("#todoTask");
 const todoList = document.querySelector("#todoList");
 const todoListH2 = document.querySelector("#todoListH2");
@@ -13,6 +13,8 @@ function todoUpdate(event) {
   }
   error.textContent = "";
   todoArray.push(todoTask.value);
+  const todoArrayStr = JSON.stringify(todoArray);
+  localStorage.setItem("todoArray", todoArrayStr);
   showTodo();
   todoTask.value = "";
 }
@@ -40,5 +42,7 @@ showTodo();
 
 function deleteTodo(index) {
   todoArray.splice(index, 1);
+  const todoArrayStr = JSON.stringify(todoArray);
+  localStorage.setItem("todoArray", todoArrayStr);
   showTodo();
 }
